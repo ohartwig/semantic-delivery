@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="EXT:semantic_delivery/Resources/Private/Language/locallang.xlf" date="2026-03-23T00:00:00Z" product-name="semantic_delivery">
+        <body>
+            <trans-unit id="pages.tab">
+                <source>Semantic Delivery</source>
+            </trans-unit>
+            <trans-unit id="pages.channels">
+                <source>Delivery Channels</source>
+            </trans-unit>
+            <trans-unit id="pages.distribution_enabled">
+                <source>Enable Distribution</source>
+            </trans-unit>
+            <trans-unit id="pages.distribution_platforms">
+                <source>Distribute to Platforms</source>
+            </trans-unit>
+            <trans-unit id="pages.distribution_platforms.description">
+                <source>Select which platforms this page should be distributed to. Only platforms with configured credentials will work.</source>
+            </trans-unit>
+            <trans-unit id="preview.title">
+                <source>Content Preview</source>
+            </trans-unit>
+            <trans-unit id="preview.channel">
+                <source>Channel</source>
+            </trans-unit>
+            <trans-unit id="preview.content">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="preview.status">
+                <source>Status</source>
+            </trans-unit>
+            <trans-unit id="preview.format">
+                <source>Format</source>
+            </trans-unit>
+            <trans-unit id="preview.noContent">
+                <source>No channel content found for this page.</source>
+            </trans-unit>
+            <trans-unit id="queue.title">
+                <source>Distribution Queue</source>
+            </trans-unit>
+            <trans-unit id="queue.distributor">
+                <source>Distributor</source>
+            </trans-unit>
+            <trans-unit id="queue.platform">
+                <source>Platform</source>
+            </trans-unit>
+            <trans-unit id="queue.scheduled">
+                <source>Scheduled</source>
+            </trans-unit>
+            <trans-unit id="queue.noJobs">
+                <source>No pending distribution jobs.</source>
+            </trans-unit>
+            <trans-unit id="log.title">
+                <source>Distribution Log</source>
+            </trans-unit>
+            <trans-unit id="log.externalId">
+                <source>External ID</source>
+            </trans-unit>
+            <trans-unit id="log.externalUrl">
+                <source>External URL</source>
+            </trans-unit>
+            <trans-unit id="log.executedAt">
+                <source>Executed At</source>
+            </trans-unit>
+            <trans-unit id="log.error">
+                <source>Error</source>
+            </trans-unit>
+            <trans-unit id="log.noEntries">
+                <source>No distribution log entries found.</source>
+            </trans-unit>
+            <trans-unit id="nav.preview">
+                <source>Preview</source>
+            </trans-unit>
+            <trans-unit id="nav.queue">
+                <source>Queue</source>
+            </trans-unit>
+            <trans-unit id="nav.log">
+                <source>Log</source>
+            </trans-unit>
+            <trans-unit id="status.pending">
+                <source>Pending</source>
+            </trans-unit>
+            <trans-unit id="status.completed">
+                <source>Completed</source>
+            </trans-unit>
+            <trans-unit id="status.failed">
+                <source>Failed</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

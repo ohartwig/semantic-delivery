@@ -1,0 +1,62 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Backend" />
+
+<f:section name="Content">
+
+    <h1><f:translate key="LLL:EXT:semantic_delivery/Resources/Private/Language/locallang.xlf:preview.title" /></h1>
+
+    <div class="btn-group mb-3">
+        <a href="{f:be.uri(route: 'content_semanticdelivery')}" class="btn btn-default btn-sm active">
+            <f:translate key="LLL:EXT:semantic_delivery/Resources/Private/Language/locallang.xlf:nav.preview" />
+        </a>
+        <a href="{f:be.uri(route: 'content_semanticdelivery.queue')}" class="btn btn-default btn-sm">
+            <f:translate key="LLL:EXT:semantic_delivery/Resources/Private/Language/locallang.xlf:nav.queue" />
+        </a>
+        <a href="{f:be.uri(route: 'content_semanticdelivery.log')}" class="btn btn-default btn-sm">
+            <f:translate key="LLL:EXT:semantic_delivery/Resources/Private/Language/locallang.xlf:nav.log" />
+        </a>
+    </div>
+
+    <f:if condition="{channelContents}">
+        <f:then>
+            <div class="table-fit">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th><f:translate key="LLL:EXT:semantic_delivery/Resources/Private/Language/locallang.xlf:preview.channel" /></th>
+                            <th><f:translate key="LLL:EXT:semantic_delivery/Resources/Private/Language/locallang.xlf:preview.format" /></th>
+                            <th><f:translate key="LLL:EXT:semantic_delivery/Resources/Private/Language/locallang.xlf:preview.status" /></th>
+                            <th><f:translate key="LLL:EXT:semantic_delivery/Resources/Private/Language/locallang.xlf:preview.content" /></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <f:for each="{channelContents}" as="channelContent">
+                            <tr>
+                                <td><strong>{channelContent.channelIdentifier}</strong></td>
+                                <td><span class="badge badge-info">{channelContent.outputFormat}</span></td>
+                                <td>
+                                    <f:if condition="{channelContent.status} == 'ready'">
+                                        <f:then><span class="badge badge-success">{channelContent.status}</span></f:then>
+                                        <f:else><span class="badge badge-secondary">{channelContent.status}</span></f:else>
+                                    </f:if>
+                                </td>
+                                <td><pre class="small">{channelContent.content -> f:format.crop(maxCharacters: 200)}</pre></td>
+                            </tr>
+                        </f:for>
+                    </tbody>
+                </table>
+            </div>
+        </f:then>
+        <f:else>
+            <div class="callout callout-info">
+                <f:translate key="LLL:EXT:semantic_delivery/Resources/Private/Language/locallang.xlf:preview.noContent" />
+            </div>
+        </f:else>
+    </f:if>
+
+</f:section>
+
+</html>

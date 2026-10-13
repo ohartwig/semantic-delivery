@@ -1,0 +1,16 @@
+{
+  // Relax purely-cosmetic rules that produce noise on docs written for
+  // humans — broader override of the component-default in
+  // lint-tools/lint-markdown. Only structural rules (heading levels,
+  // duplicate headings, etc.) stay enforced.
+  "default": true,
+  "MD013": false,
+  "MD034": false,
+  "MD060": false,
+  "MD040": false,
+  "MD041": false,
+  "MD032": false,
+  "MD031": false,
+  "MD058": false,
+  "MD022": false
+}

@@ -1,0 +1,62 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Koh\SemanticDelivery\:
+    resource: '../Classes/'
+    exclude: '../Classes/Domain/Model/*'
+
+  _instanceof:
+    Koh\SemanticDelivery\Domain\Contract\ChannelInterface:
+      tags: ['semantic_delivery.channel']
+    Koh\SemanticDelivery\Domain\Contract\TransformerInterface:
+      tags: ['semantic_delivery.transformer']
+    Koh\SemanticDelivery\Domain\Contract\DistributorInterface:
+      tags: ['semantic_delivery.distributor']
+
+  Koh\SemanticDelivery\Application\Service\ContentTransformerService:
+    arguments:
+      $channels: !tagged_iterator semantic_delivery.channel
+
+  Koh\SemanticDelivery\Application\Service\DistributionService:
+    arguments:
+      $distributors: !tagged_iterator semantic_delivery.distributor
+
+  Koh\SemanticDelivery\Infrastructure\Tca\DistributionPlatformItemsProcFunc:
+    public: true
+    arguments:
+      $distributors: !tagged_iterator semantic_delivery.distributor
+      $siteFinder: '@TYPO3\CMS\Core\Site\SiteFinder'
+
+  Koh\SemanticDelivery\Application\Service\SocialMediaTransformerService:
+    arguments:
+      $transformers: !tagged_iterator semantic_delivery.transformer
+
+  Koh\SemanticDelivery\Domain\Repository\ChannelContentRepositoryInterface:
+    alias: Koh\SemanticDelivery\Infrastructure\Persistence\ChannelContentRepository
+
+  Koh\SemanticDelivery\Domain\Repository\DistributionJobRepositoryInterface:
+    alias: Koh\SemanticDelivery\Infrastructure\Persistence\DistributionJobRepository
+
+  Koh\SemanticDelivery\Presentation\Controller\DistributionController:
+    public: true
+
+  # Console commands
+  Koh\SemanticDelivery\Infrastructure\Command\ProcessPendingJobsCommand:
+    tags:
+      - name: 'console.command'
+        command: 'semantic-delivery:process-jobs'
+        description: 'Process all pending social media distribution jobs'
+
+  Koh\SemanticDelivery\Infrastructure\Command\PodcastEpisodeDetectorCommand:
+    tags:
+      - name: 'console.command'
+        command: 'semantic-delivery:detect-episodes'
+        description: 'Detect new podcast episodes and create distribution jobs'
+
+  cache.semantic_delivery:
+    class: TYPO3\CMS\Core\Cache\Frontend\FrontendInterface
+    factory: ['@TYPO3\CMS\Core\Cache\CacheManager', 'getCache']
+    arguments: ['semantic_delivery']

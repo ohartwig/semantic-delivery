@@ -1,0 +1,17 @@
+# Level und Regelsatz kommen aus dem geteilten Standard in koh/dev, damit
+# eine Aenderung dort dieses Repository erreicht. Lokal bleiben nur die Pfade —
+# der geteilte Stand nennt bewusst keine, weil ein relativer Pfad darin nach
+# vendor/ zeigen wuerde.
+includes:
+    - vendor/koh/dev-typo3/config/typo3/phpstan.neon
+
+parameters:
+    paths:
+        - Classes
+
+    # Beibehalten aus der bisherigen eigenen Konfiguration: PHPDoc-Typen werden
+    # nicht als sicher behandelt. Ohne das meldet PHPStan Vergleiche als immer
+    # wahr oder immer falsch, sobald ein Kommentar praeziser ist als der
+    # tatsaechlich moegliche Wert — in einem Paket, das viel mit fremden
+    # Datenstrukturen umgeht, sind das Fehlalarme.
+    treatPhpDocTypesAsCertain: false

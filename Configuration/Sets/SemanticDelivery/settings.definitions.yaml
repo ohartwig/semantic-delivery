@@ -1,0 +1,153 @@
+categories:
+  semanticDelivery:
+    label: 'Semantic Delivery'
+  semanticDelivery.general:
+    label: 'General'
+    parent: semanticDelivery
+  semanticDelivery.channels:
+    label: 'Channels'
+    parent: semanticDelivery
+  semanticDelivery.distribution:
+    label: 'Distribution'
+    parent: semanticDelivery
+  semanticDelivery.blogging:
+    label: 'Blog-Plattformen'
+    parent: semanticDelivery
+
+settings:
+  semanticDelivery.enabled:
+    label: 'Enable Semantic Delivery'
+    description: 'Enable or disable the Semantic Delivery extension for this site'
+    type: bool
+    default: true
+    category: semanticDelivery.general
+
+  semanticDelivery.apiBasePath:
+    label: 'API Base Path'
+    description: 'Base path for the Semantic Delivery API endpoints'
+    type: string
+    default: '/_semantic-delivery/api'
+    category: semanticDelivery.general
+
+  semanticDelivery.channels.website.enabled:
+    label: 'Enable Website Channel'
+    description: 'Enable HTML + JSON-LD output for website visitors'
+    type: bool
+    default: true
+    category: semanticDelivery.channels
+
+  semanticDelivery.channels.aiAgent.enabled:
+    label: 'Enable AI Agent Channel'
+    description: 'Enable structured JSON output for AI agents'
+    type: bool
+    default: true
+    category: semanticDelivery.channels
+
+  semanticDelivery.channels.voice.enabled:
+    label: 'Enable Voice Channel'
+    description: 'Enable SSML output for voice assistants'
+    type: bool
+    default: false
+    category: semanticDelivery.channels
+
+  semanticDelivery.channels.socialMedia.enabled:
+    label: 'Enable Social Media Channel'
+    description: 'Enable social media content transformation'
+    type: bool
+    default: false
+    category: semanticDelivery.channels
+
+  semanticDelivery.distribution.enabled:
+    label: 'Enable Distribution'
+    description: 'Enable content distribution to external platforms'
+    type: bool
+    default: false
+    category: semanticDelivery.distribution
+
+  semanticDelivery.distribution.defaultDistributor:
+    label: 'Default Distributor'
+    description: 'Default distributor for content distribution (webhook, n8n, ayrshare, buffer, latedev)'
+    type: string
+    default: 'webhook'
+    category: semanticDelivery.distribution
+
+  # Social Media
+  semanticDelivery.social.bluesky.handle:
+    label: 'Bluesky: Handle'
+    description: 'Bluesky Handle (z.B. example.org). Leer = Bluesky deaktiviert.'
+    type: string
+    default: ''
+    category: semanticDelivery.distribution
+
+  semanticDelivery.social.bluesky.appPassword:
+    label: 'Bluesky: App Password'
+    description: 'Bluesky App Password (aus Settings → App Passwords).'
+    type: string
+    default: ''
+    category: semanticDelivery.distribution
+
+  semanticDelivery.social.linkedin.accessToken:
+    label: 'LinkedIn: Access Token'
+    description: 'LinkedIn OAuth 2.0 Access Token.'
+    type: string
+    default: ''
+    category: semanticDelivery.distribution
+
+  semanticDelivery.social.linkedin.organizationId:
+    label: 'LinkedIn: Organization ID'
+    description: 'LinkedIn Organization/Company ID (numerisch). Wird bevorzugt wenn gesetzt.'
+    type: string
+    default: ''
+    category: semanticDelivery.distribution
+
+  semanticDelivery.social.linkedin.personId:
+    label: 'LinkedIn: Person ID'
+    description: 'LinkedIn Person ID (aus /v2/userinfo sub-Feld). Wird verwendet wenn keine Organization ID gesetzt ist.'
+    type: string
+    default: ''
+    category: semanticDelivery.distribution
+
+  semanticDelivery.social.twitter.bearerToken:
+    label: 'X/Twitter: Bearer Token'
+    description: 'X/Twitter API v2 Bearer Token.'
+    type: string
+    default: ''
+    category: semanticDelivery.distribution
+
+  semanticDelivery.social.instagram.accessToken:
+    label: 'Instagram: Access Token'
+    description: 'Instagram Graph API Access Token (Long-Lived).'
+    type: string
+    default: ''
+    category: semanticDelivery.distribution
+
+  semanticDelivery.social.instagram.accountId:
+    label: 'Instagram: Account ID'
+    description: 'Instagram Business Account ID.'
+    type: string
+    default: ''
+    category: semanticDelivery.distribution
+
+  semanticDelivery.social.facebook.accessToken:
+    label: 'Facebook: Page Access Token'
+    description: 'Facebook Page Access Token (Long-Lived).'
+    type: string
+    default: ''
+    category: semanticDelivery.distribution
+
+  semanticDelivery.social.facebook.pageId:
+    label: 'Facebook: Page ID'
+    description: 'Facebook Page ID (numerisch).'
+    type: string
+    default: ''
+    category: semanticDelivery.distribution
+
+  # Blog-Plattformen
+  semanticDelivery.blogging.devto.apiKey:
+    label: 'Dev.to: API Key'
+    description: 'Dev.to API Key (aus den Settings → Extensions). Leer = Dev.to deaktiviert.'
+    type: string
+    default: ''
+    category: semanticDelivery.blogging
+
+

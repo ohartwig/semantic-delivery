@@ -1,0 +1,61 @@
+parameters:
+  paths:
+    - Classes
+  layers:
+    - name: Domain
+      collectors:
+        - type: directory
+          value: 'Classes/Domain/.*'
+    - name: Application
+      collectors:
+        - type: directory
+          value: 'Classes/Application/.*'
+    - name: Infrastructure
+      collectors:
+        - type: directory
+          value: 'Classes/Infrastructure/.*'
+    - name: Presentation
+      collectors:
+        - type: directory
+          value: 'Classes/Presentation/.*'
+    - name: Framework
+      collectors:
+        - type: classLike
+          value: 'TYPO3\\CMS\\.*'
+        - type: classLike
+          value: 'Psr\\.*'
+        - type: classLike
+          value: 'Doctrine\\DBAL\\.*'
+        - type: classLike
+          value: 'Symfony\\Component\\.*'
+    - name: ContentIntelligence
+      collectors:
+        - type: classLike
+          value: 'Koh\\ContentIntelligence\\.*'
+
+  ruleset:
+    Domain: []
+    Application:
+      - Domain
+    Infrastructure:
+      - Application
+      - Domain
+      - Framework
+      - ContentIntelligence  # ONE-WAY: SemanticDelivery → ContentIntelligence only. Reverse import is forbidden.
+    Presentation:
+      - Application
+      - Domain
+      - Framework
+    Framework: []
+    ContentIntelligence: []
+
+  # Pre-existing violations from the qossmic/deptrac → deptrac/deptrac v3
+  # migration. OAuthTokenService sits in Application but touches the
+  # ConnectionPool + DBAL types directly — proper fix is a repository
+  # port in Infrastructure. Tracked as separate refactor; new violations
+  # on top still fail the build.
+  skip_violations:
+    Koh\SemanticDelivery\Application\Service\OAuthTokenService:
+      - Doctrine\DBAL\ParameterType
+      - TYPO3\CMS\Core\Database\ConnectionPool
+      - TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction
