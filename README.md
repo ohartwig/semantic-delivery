@@ -194,7 +194,7 @@ semanticDelivery:
 
 #### 2. Configure platform credentials
 
-Credentials are configured per site in `config/sites/<name>/config.yaml`. Sensitive tokens use the `%secret()%` syntax (see [moselwal/secret-resolver](https://gitlab.moselwal.io/development/moselwal/secret-resolver)), public identifiers go directly into the YAML.
+Credentials are configured per site in `config/sites/<name>/config.yaml`. Sensitive tokens use the `%secret()%` syntax (resolved by `moselwal/secret-resolver`, a separate, non-public extension), public identifiers go directly into the YAML.
 
 Only platforms with a non-empty primary credential appear in the backend page editor. Platforms without credentials are hidden from the editor so they cannot select targets that would fail.
 
