@@ -467,7 +467,7 @@ vendor/bin/typo3 semantic-delivery:detect-episodes
 vendor/bin/typo3 semantic-delivery:detect-episodes --auto-publish
 ```
 
-> **Cache-Key v3.0.4+:** Der Episode-Detector liest aus dem `content_blocks_collection_rssfeed`-Cache mit `'rssfeed_' . hash('sha256', $feedUrl)`. Muss mit dem Schreib-Key in `moselwal/content-blocks-collection`'s `PodcastFeedService::cacheIdentifierFor()` übereinstimmen (vorher md5 — Mismatch führte dazu, dass der Detector keine Episoden fand). Eigene `podcast_hash_*` / `podcast_guids_*`-Keys nutzen weiter md5, weil der Detector beide Seiten selbst pflegt.
+> **Cache key v3.0.4+:** the episode detector reads from the `content_blocks_collection_rssfeed` cache with `'rssfeed_' . hash('sha256', $feedUrl)`. This must match the write key in `moselwal/content-blocks-collection`'s `PodcastFeedService::cacheIdentifierFor()` (previously md5 — the mismatch meant the detector found no episodes). Its own `podcast_hash_*` / `podcast_guids_*` keys still use md5, because the detector maintains both sides itself.
 
 #### Process pending jobs
 
