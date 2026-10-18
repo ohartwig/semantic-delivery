@@ -28,7 +28,7 @@ composer require koh/semantic-delivery
 
 ### Requirements
 
-- PHP 8.2+
+- PHP 8.3+
 - TYPO3 14.0
 
 ## Architecture

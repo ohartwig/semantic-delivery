@@ -104,7 +104,7 @@ final class BlueskyDistributor implements DistributorInterface
         $record = [
             '$type' => 'app.bsky.feed.post',
             'text' => $text,
-            'createdAt' => new \DateTimeImmutable('now', new \DateTimeZone('UTC'))->format('c'),
+            'createdAt' => (new \DateTimeImmutable('now', new \DateTimeZone('UTC')))->format('c'),
         ];
 
         if ([] !== $facets) {
