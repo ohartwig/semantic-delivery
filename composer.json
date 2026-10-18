@@ -18,7 +18,7 @@
         "security": "https://github.com/ohartwig/semantic-delivery/blob/main/SECURITY.md"
     },
     "require": {
-        "php": "^8.5.11",
+        "php": "^8.3",
         "koh/structured-content": "^2.14",
         "typo3/cms-backend": "^14.0",
         "typo3/cms-core": "^14.0",
