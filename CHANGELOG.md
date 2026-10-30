@@ -3,6 +3,17 @@
 This package continues `moselwal/semantic-delivery` (last release 3.1.9) as
 `koh/semantic-delivery` with a fresh history. Releases from 3.2.0 on are listed here.
 
+## [3.2.4](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/compare/v3.2.3...v3.2.4) (2026-10-30)
+
+### :white_check_mark: Tests
+
+* add a unit test suite for the delivery channels, transformers, distributors and middleware ([89ff090](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/89ff090337c04478cdab3aca3fae7a97b5009427))
+* build the DI container in this repository's pipeline ([422068c](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/422068cece8d51d0cdc9216fe13125f81eb4e0a6))
+
+### :repeat: Chores
+
+* **repo-templates:** sync ([d7d0827](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/d7d08273464a155382207b9f87197842138c2b44))
+
 ## [3.2.3](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/compare/v3.2.2...v3.2.3) (2026-10-18)
 
 ### :bug: Fixes
