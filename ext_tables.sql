@@ -59,7 +59,5 @@ CREATE TABLE tx_semanticdelivery_oauth_token (
 );
 
 CREATE TABLE pages (
-    tx_semanticdelivery_channels varchar(255) DEFAULT '' NOT NULL,
-    tx_semanticdelivery_distribution_enabled tinyint(1) unsigned DEFAULT '0' NOT NULL,
-    tx_semanticdelivery_distribution_platforms varchar(255) DEFAULT '' NOT NULL
+    tx_semanticdelivery_channels varchar(255) DEFAULT '' NOT NULL
 );

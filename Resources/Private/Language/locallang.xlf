@@ -8,15 +8,6 @@
             <trans-unit id="pages.channels">
                 <source>Delivery Channels</source>
             </trans-unit>
-            <trans-unit id="pages.distribution_enabled">
-                <source>Enable Distribution</source>
-            </trans-unit>
-            <trans-unit id="pages.distribution_platforms">
-                <source>Distribute to Platforms</source>
-            </trans-unit>
-            <trans-unit id="pages.distribution_platforms.description">
-                <source>Select which platforms this page should be distributed to. Only platforms with configured credentials will work.</source>
-            </trans-unit>
             <trans-unit id="preview.title">
                 <source>Content Preview</source>
             </trans-unit>

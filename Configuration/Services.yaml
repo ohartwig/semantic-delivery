@@ -24,12 +24,6 @@ services:
     arguments:
       $distributors: !tagged_iterator semantic_delivery.distributor
 
-  Koh\SemanticDelivery\Infrastructure\Tca\DistributionPlatformItemsProcFunc:
-    public: true
-    arguments:
-      $distributors: !tagged_iterator semantic_delivery.distributor
-      $siteFinder: '@TYPO3\CMS\Core\Site\SiteFinder'
-
   Koh\SemanticDelivery\Application\Service\SocialMediaTransformerService:
     arguments:
       $transformers: !tagged_iterator semantic_delivery.transformer
