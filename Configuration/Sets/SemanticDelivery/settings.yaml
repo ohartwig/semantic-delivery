@@ -10,25 +10,3 @@ semanticDelivery:
       enabled: false
     socialMedia:
       enabled: true
-  distribution:
-    enabled: true
-    defaultDistributor: 'bluesky'
-  social:
-    bluesky:
-      handle: ''
-      appPassword: ''
-    linkedin:
-      accessToken: ''
-      organizationId: ''
-      personId: ''
-    twitter:
-      bearerToken: ''
-    instagram:
-      accessToken: ''
-      accountId: ''
-    facebook:
-      accessToken: ''
-      pageId: ''
-  blogging:
-    devto:
-      apiKey: ''
