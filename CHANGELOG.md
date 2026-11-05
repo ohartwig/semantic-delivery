@@ -3,6 +3,18 @@
 This package continues `moselwal/semantic-delivery` (last release 3.1.9) as
 `koh/semantic-delivery` with a fresh history. Releases from 3.2.0 on are listed here.
 
+## [3.2.5](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/compare/v3.2.4...v3.2.5) (2026-11-05)
+
+### :bug: Fixes
+
+* **security:** AUD-026 F01 — drop the platform credential settings no code reads ([362479c](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/362479cf1c8abd7ca4f74898fc3dce9338aa3291))
+
+### :repeat: Chores
+
+* **repo-templates:** sync ([ca5d747](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/ca5d74767acc035b3056ffb1eb4aad9bc724618b))
+* **repo-templates:** sync ([e3f24b6](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/e3f24b697770d2fbdb4fd788dff180bfbf01ad42))
+* **repo-templates:** sync ([4783a16](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/4783a16c7f6a20fbeac5f4890ad2cf2ce30debe5))
+
 ## [3.2.4](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/compare/v3.2.3...v3.2.4) (2026-10-30)
 
 ### :white_check_mark: Tests
