@@ -3,6 +3,12 @@
 This package continues `moselwal/semantic-delivery` (last release 3.1.9) as
 `koh/semantic-delivery` with a fresh history. Releases from 3.2.0 on are listed here.
 
+## [3.2.6](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/compare/v3.2.5...v3.2.6) (2026-11-05)
+
+### :bug: Fixes
+
+* **test:** make test:infection start under PHPUnit 13 ([14e5b29](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/14e5b29a53f4025933c55429b2c4a6fdec3a9d5d))
+
 ## [3.2.5](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/compare/v3.2.4...v3.2.5) (2026-11-05)
 
 ### :bug: Fixes
