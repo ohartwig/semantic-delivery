@@ -9,6 +9,7 @@ use Koh\SemanticDelivery\Domain\Model\DistributionJob;
 use Koh\SemanticDelivery\Infrastructure\Persistence\ChannelContentRepository;
 use Koh\SemanticDelivery\Infrastructure\Persistence\DistributionJobRepository;
 use Koh\SemanticDelivery\Tests\Unit\Support\DatabaseDouble;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use TYPO3\CMS\Core\Database\Connection;
@@ -113,6 +114,39 @@ final class RepositoriesTest extends TestCase
         $repo = new ChannelContentRepository($this->pool($this->queryBuilder(self::CONTENT_ROW), $connection));
 
         self::assertSame(11, $repo->save(new ChannelContent('website', 'new', [], 'ready', 'html', 4)));
+    }
+
+    #[Test]
+    public function savingUnchangedContentWritesNothing(): void
+    {
+        $connection = $this->createMock(Connection::class);
+        $connection->expects(self::never())->method('insert');
+        $connection->expects(self::never())->method('update');
+        $repo = new ChannelContentRepository($this->pool($this->queryBuilder(self::CONTENT_ROW), $connection));
+
+        self::assertSame(11, $repo->save(new ChannelContent('website', '<p>x</p>', ['title' => 'T'], 'ready', 'html', 4)));
+    }
+
+    /**
+     * @return iterable<string, array{ChannelContent}>
+     */
+    public static function oneFieldChanged(): iterable
+    {
+        yield 'content' => [new ChannelContent('website', '<p>y</p>', ['title' => 'T'], 'ready', 'html', 4)];
+        yield 'metadata' => [new ChannelContent('website', '<p>x</p>', ['title' => 'U'], 'ready', 'html', 4)];
+        yield 'status' => [new ChannelContent('website', '<p>x</p>', ['title' => 'T'], 'draft', 'html', 4)];
+        yield 'output format' => [new ChannelContent('website', '<p>x</p>', ['title' => 'T'], 'ready', 'json', 4)];
+    }
+
+    #[Test]
+    #[DataProvider('oneFieldChanged')]
+    public function anyChangedFieldIsWritten(ChannelContent $changed): void
+    {
+        $connection = $this->createMock(Connection::class);
+        $connection->expects(self::once())->method('update');
+        $repo = new ChannelContentRepository($this->pool($this->queryBuilder(self::CONTENT_ROW), $connection));
+
+        self::assertSame(11, $repo->save($changed));
     }
 
     #[Test]
