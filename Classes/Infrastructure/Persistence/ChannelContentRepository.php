@@ -75,6 +75,13 @@ final class ChannelContentRepository implements ChannelContentRepositoryInterfac
             'output_format' => $channelContent->outputFormat,
         ];
 
+        if (null !== $existing && $this->isUnchanged($existing, $channelContent)) {
+            // Every uncached page render saves all channels again; most of the
+            // time nothing changed, and an UPDATE per channel and render is a
+            // write the database does not need.
+            return $existing->uid;
+        }
+
         $connection = $this->connectionPool->getConnectionForTable(self::TABLE);
 
         if (null !== $existing) {
@@ -116,6 +123,15 @@ final class ChannelContentRepository implements ChannelContentRepositoryInterfac
     {
         $connection = $this->connectionPool->getConnectionForTable(self::TABLE);
         $connection->delete(self::TABLE, ['uid' => $uid]);
+    }
+
+    private function isUnchanged(ChannelContent $stored, ChannelContent $new): bool
+    {
+        return $stored->content === $new->content
+            && $stored->status === $new->status
+            && $stored->outputFormat === $new->outputFormat
+            // Compared the way it is stored: as decoded JSON.
+            && $stored->metadata === json_decode((string) json_encode($new->metadata), true);
     }
 
     /**
