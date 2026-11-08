@@ -3,6 +3,33 @@
 This package continues `moselwal/semantic-delivery` (last release 3.1.9) as
 `koh/semantic-delivery` with a fresh history. Releases from 3.2.0 on are listed here.
 
+## [3.2.7](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/compare/v3.2.6...v3.2.7) (2026-11-08)
+
+### :bug: Fixes
+
+* **persistence:** skip the write when channel content is unchanged ([2413044](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/24130449ca254d1aaf193c8f71f372c2b78c8671))
+
+### :white_check_mark: Tests
+
+* **infection:** run mutation testing on the Unit suite only ([6c7887d](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/6c7887d55c1bd4b86534a83ca39712a357ed5a59))
+
+### :repeat: Chores
+
+* **repo-templates:** sync ([78500b6](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/78500b6031f1e0b23273e881e7ee64f6ae8adbef))
+* **repo-templates:** sync ([02ceb60](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/02ceb60135a4898fc4cd586769f14f6fa5dc70a1))
+* **deps:** update dependency registry.ole-hartwig.eu/devops/images/franken-php/ci to v3.2.150-8.5 ([ca88b2a](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/ca88b2a7d4ddac49094dfa32ced8532739e4731c))
+* **deps:** update dependency registry.ole-hartwig.eu/devops/images/franken-php/ci to v3.2.149-8.5 ([6ed6075](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/6ed607558cfee6919360c7ec3d7d9d26bdf85dd6))
+* **deps:** update dependency registry.ole-hartwig.eu/devops/images/franken-php/ci to v3.2.148-8.5 ([ea882c8](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/ea882c89f916ddf229a981e17c621b153ca2c6f9))
+* **deps:** update dependency registry.ole-hartwig.eu/devops/images/franken-php/ci to v3.2.147-8.5 ([46e136c](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/46e136cf4616bee72df45ba7d115cd82137821af))
+* **deps:** update dependency registry.ole-hartwig.eu/devops/images/franken-php/ci to v3.2.146-8.5 ([f2dfd17](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/f2dfd17fa60a1e20578c86974963bf13bb83fe0b))
+* **deps:** update dependency registry.ole-hartwig.eu/devops/images/franken-php/ci to v3.2.144-8.5 ([52bdfe1](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/52bdfe1cec51efe92c43df7ceb15def7385a28fd))
+* **deps:** update dependency registry.ole-hartwig.eu/devops/images/franken-php/ci to v3.2.143-8.5 ([bdd3cc3](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/bdd3cc377093672497c5e512fc823c2c8c2b0fc8))
+* **deps:** update dependency registry.ole-hartwig.eu/devops/images/franken-php/ci to v3.2.142-8.5 ([8232741](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/82327412d2a87ad7652cd4823e270dce81a738e0))
+* **deps:** update dependency registry.ole-hartwig.eu/devops/images/franken-php/ci to v3.2.139-8.5 ([553ddf7](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/553ddf7ae3de7a3765930a7b4402988ab1c1e4ae))
+* **deps:** update dependency registry.ole-hartwig.eu/devops/images/franken-php/ci to v3.2.138-8.5 ([f67fb13](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/f67fb132cc580aa95e3b9ba78478905638afe51d))
+* **deps:** update dependency registry.ole-hartwig.eu/devops/images/franken-php/ci to v3.2.137-8.5 ([485264e](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/485264e56b50a1d47060f324e555bddac8b8ccec))
+* **repo-templates:** sync ([eb63098](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/commit/eb630980b5a35d61fde7809562b91fd52e2297eb))
+
 ## [3.2.6](https://git.ole-hartwig.eu/ai-ready-platform/platform/semantic-delivery/compare/v3.2.5...v3.2.6) (2026-11-05)
 
 ### :bug: Fixes
